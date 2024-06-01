@@ -1,0 +1,24 @@
+.skills {
+    display: grid;
+    // min-height: 80vh;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 2rem;
+    padding: 5rem;
+    background: white;
+
+    @media (max-width: '768px'){
+        display: flex;
+        flex-direction: column;
+      }
+
+    .skill {
+        display: flex;
+        flex-direction: column;
+
+        progress {
+            min-height: 2rem;
+            min-width: 20rem;
+        }
+    }
+}
