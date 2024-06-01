@@ -5,14 +5,22 @@ import '@/styles/Projects.scss';
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-  const repoNames = ["MailBoxClient", "TaskScheduler-FrontEnd", "ExpenseTracker", "E-CommerceProject"]; 
+  const repoNames = ["MailBoxClient", "TaskScheduler-FrontEnd", "ExpenseTracker", "E-CommerceProject", "My-Portfolio"]; 
 
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await fetch("https://api.github.com/users/iamASR27/repos");
+        const response = await fetch("https://api.github.com/users/iamASR27/repos", {
+            headers: {
+                Authorization: process.env.GITHUB_API_KEY
+              }
+        });
+        if (!response.ok) {
+            throw new Error("Failed to fetch GitHub repositories");
+          }
+
         const data = await response.json();
-        console.log(data);
+        // console.log(data);
         const filteredProjects = data.filter(project => repoNames.includes(project.name));
 
         const projectsWithLanguages = await Promise.all(filteredProjects.map(async (project) => {
@@ -44,7 +52,7 @@ const Projects = () => {
           <Link href={project.html_url} target="_blank"><button className="project__card__repo"><FaGithub />Go to repo</button></Link>
           <hr />
           <p className="project__card__languages"><strong>Languages</strong>: {formatLanguages(project.languages)}</p>
-          {console.log(project.languages)}
+          {/* {console.log(project.languages)} */}
           <p className="project__card__updated"><strong>Last Updated</strong>: {project.updated_at.split("T")[0]}</p>
         </div>
       ))}

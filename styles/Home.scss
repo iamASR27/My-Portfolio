@@ -23,9 +23,11 @@
       font-size: 6.02781696rem;
       text-align: center;
       font-weight: 200;
+      // padding: 0 0.5rem;
       // border: 1px solid black;
       @media (max-width: '768px'){
-        font-size: 4.966768125rem;
+        font-size: 4.566768125rem;
+
       }
     }
     &__text {
@@ -33,6 +35,7 @@
       // border: 1px solid black;
       align-content: center;
       font-size: 1.2rem;
+      text-align: center;
     }
     &__icons {
       padding: 3rem;

@@ -4,14 +4,11 @@ import Link from "next/link";
 import '@/styles/About.scss';
 
 const About = () => {
-    // const description = 'My name is Amardeep Singh Rawat. I am a BE graduate of 2020 from    University Institute of Technology, RGPV at Bhopal(M.P). I want to work in an
-    // environment which encourages me to succeed and grow professionally
-    // where I can utilize my skills and knowledge appropriately.';
-
+    
   return (
     <div className="about" id="about">
       <div className="about__image">
-        <Image src="/placeholder.png" alt="about" width={500} height={500} />
+        <Image src="/placeholder.png" alt="about" width={500} height={500} loading="lazy"/>
       </div>
       <div className="about__description">
         <h1>About Me</h1>

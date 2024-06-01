@@ -14,7 +14,7 @@ const Home = () => {
       const timeout = setTimeout(() => {
         setText(prevText => prevText + typedText[currentIndex]);
         setCurrentIndex(prevIndex => prevIndex + 1);
-      }, 100);
+      }, 50);
   
       return () => clearTimeout(timeout);
     }
