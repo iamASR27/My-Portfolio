@@ -42,7 +42,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div id="projects">
+    <div id="projects" className="projects">
     <h2 style={{textAlign: 'center'}}>My Projects</h2>
     <div className="project__cards">
       {projects?.map((project) => (

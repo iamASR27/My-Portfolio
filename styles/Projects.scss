@@ -8,6 +8,8 @@
   @media (max-width: '768px'){
     display: flex;
     flex-direction: column;
+    min-width: 100vw;
+    padding: 0;
   }
 }
 
@@ -19,6 +21,11 @@
   justify-content: center;
   align-items: flex-start;
   gap: 1rem;
+
+  
+  @media (max-width: '500px'){
+    min-width: 100vw;
+  }
 
   &__title {
     font-weight: 700;
@@ -41,6 +48,13 @@
       color: white;
       background: black;
     }
+  }
+}
+
+
+@media (max-width: '768px'){
+  .projects h2 {
+    margin-bottom: 3rem;
   }
 }
 
