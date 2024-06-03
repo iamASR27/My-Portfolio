@@ -24,7 +24,11 @@ const Projects = () => {
         const filteredProjects = data.filter(project => repoNames.includes(project.name));
 
         const projectsWithLanguages = await Promise.all(filteredProjects.map(async (project) => {
-          const languagesResponse = await fetch(project.languages_url);
+          const languagesResponse = await fetch(project.languages_url, {
+            headers: {
+              Authorization: process.env.GITHUB_API_KEY
+            }
+          });
           const languagesData = await languagesResponse.json();
           return {
             ...project,
